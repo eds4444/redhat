@@ -16,44 +16,25 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" rel="stylesheet">
+
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'radhat' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$radhat_description = get_bloginfo( 'description', 'display' );
-			if ( $radhat_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $radhat_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'radhat' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+<div class="wrap">
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="RedHat"></div>
+      <div class="header__desc">Сертифицированное агенство Google Adwords и Yandex Direct</div><a class="header__phone-mobile" href="tel:+77076225781"></a>
+      <div class="header__burger"></div>
+      <div class="header__sidebar">
+        <div class="header__sidebar-close"></div><a class="header__phone" href="tel:+77076225781"><span class="header__phone-icon"></span><span class="header__phone-number">+7 707 622 57 81 </span></a><a class="btn btn_light header__btn" href="#"><span>Заказать звонок</span></a>
+      </div>
+    </div>
+  </div>
+</header>
