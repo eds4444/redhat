@@ -14,14 +14,16 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
-      <div class="footer__logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-logo.png" alt="RedhHat"></div>
+      <div class="footer__logo"><img src="<?php the_field('footer_logo', 'options'); ?>" alt="RedhHat"></div>
       <div class="footer__info"> 
-        <div class="footer__info-sert">Сертифицированное агенство Google Adwords и Yandex Direct</div><a class="footer__info-conf" href="#">Политика конфиденциальности</a>
+        <div class="footer__info-sert"><?php the_field('footer_descr', 'options'); ?></div><a class="footer__info-conf" href="<?php the_field('footer_policy', 'options'); ?>">Политика конфиденциальности</a>
       </div>
-      <div class="footer__soc"><a class="footer__soc-icon footer__soc-icon_inst" href="#"></a><a class="footer__soc-icon footer__soc-icon_vk" href="#"></a></div>
-      <div class="footer__contacts"><a class="footer__contacts-phone" href="tel:+77018295099">+7 (701) 829-50-99</a>
-        <div class="footer__contacts-address">Алматы, Назарбаева 193</div>
-      </div><a class="btn footer__btn" href="#"> <span>Получить консультацию</span></a><a class="footer__info-conf footer__info-conf_mobile" href="#">Политика конфиденциальности</a>
+      <div class="footer__soc"><a class="footer__soc-icon footer__soc-icon_inst" href="<?php the_field('footer_inst', 'options'); ?>"></a>
+        <a class="footer__soc-icon footer__soc-icon_vk" href="<?php the_field('footer_VK', 'options'); ?>"></a>
+      </div>
+      <div class="footer__contacts"><a class="footer__contacts-phone" href="tel:<?php the_field('footer_tel', 'options'); ?>"><?php the_field('footer_tel', 'options'); ?></a>
+        <div class="footer__contacts-address"><?php the_field('footer-adres', 'options'); ?></div>
+      </div><a class="btn footer__btn" href="#"> <span>Получить консультацию</span></a><a class="footer__info-conf footer__info-conf_mobile" href="<?php the_field('footer_policy', 'options'); ?>">Политика конфиденциальности</a>
     </div>
   </div>
 </footer>

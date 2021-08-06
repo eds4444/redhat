@@ -29,11 +29,11 @@
 <header class="header">
   <div class="container">
     <div class="header__inner">
-      <div class="header__logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="RedHat"></div>
-      <div class="header__desc">Сертифицированное агенство Google Adwords и Yandex Direct</div><a class="header__phone-mobile" href="tel:+77076225781"></a>
+      <div class="header__logo"><img src="<?php the_field('header_logo', 'options'); ?>" alt="RedHat"></div>
+      <div class="header__desc"><?php the_field('header_descr', 'options'); ?></div><a class="header__phone-mobile" href="tel:<?php the_field('header_tel', 'options'); ?>"></a>
       <div class="header__burger"></div>
       <div class="header__sidebar">
-        <div class="header__sidebar-close"></div><a class="header__phone" href="tel:+77076225781"><span class="header__phone-icon"></span><span class="header__phone-number">+7 707 622 57 81 </span></a><a class="btn btn_light header__btn" href="#"><span>Заказать звонок</span></a>
+        <div class="header__sidebar-close"></div><a class="header__phone" href="tel:<?php the_field('header_tel', 'options'); ?>"><span class="header__phone-icon"></span><span class="header__phone-number"><?php the_field('header_tel', 'options'); ?></span></a><a class="btn btn_light header__btn" href="#"><span>Заказать звонок</span></a>
       </div>
     </div>
   </div>
