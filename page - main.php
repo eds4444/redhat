@@ -7,20 +7,42 @@ get_header();
 <section class="banner">
   <div class="container">
     <div class="banner__inner">
-      <h1 class="banner__title">Контекстная реклама</h1>
-      <div class="banner__subtitle">от сертифицированных партнеров Google и Yandex</div>
+      <h1 class="banner__title"><?php the_field('main_title'); ?></h1>
+      <div class="banner__subtitle"><?php the_field('main_subtitle'); ?></div>
       <div class="banner__items">
+
         <div class="banner__item">
+        <?php if( have_rows('main_avantegees_1') ): ?>
+        <?php while( have_rows('main_avantegees_1') ): the_row(); ?>
           <div class="banner__item-img banner__item-img_bg1"></div>
-          <div class="banner__item-text">Ваш сайт будет в топ-3 Google с гарантией по договору</div>
+          <div class="banner__item-text"><?php the_sub_field('main_avantegees_1_text'); ?></div>                       
+        <style>
+            .banner__item-img_bg1 {
+              background: url(<?php the_sub_field('main_avantegees_1_img'); ?>) no-repeat 39% 46%;
+               width: 3.125rem;
+            }
+        </style>
+        <?php endwhile; ?>
+        <?php endif; ?> 
+
+
         </div>
-        <div class="banner__item">
+        <?php if( have_rows('main_avantegees_2') ): ?>
+        <?php while( have_rows('main_avantegees_2') ): the_row(); ?>
           <div class="banner__item-img banner__item-img_bg2"></div>
-          <div class="banner__item-text">Приводим реальные продажи а не клики и показы</div>
-        </div>
+          <div class="banner__item-text"><?php the_sub_field('main_avantegees_1_text'); ?></div>                       
+        <style>
+            .banner__item-img_bg2 {
+              background: url(<?php the_sub_field('main_avantegees_1_img'); ?>) no-repeat 0 50%;
+              width: 6.875rem;
+            }
+        </style>
+        <?php endwhile; ?>
+        <?php endif; ?>          
+    
       </div>
       <div class="banner__buttons"><a class="btn banner__btn" href="#"><span>Оставить заявку</span></a>
-        <div class="banner__desc">И мы бесплатно рассчитаем стоимость и сроки настройки Вашей рекламы за 1 час</div>
+        <div class="banner__desc"><?php the_field('main_button_text'); ?> </div>
       </div><a class="banner__scroll" href="#result">
         <div class="banner__scroll-img"></div>
         <div class="banner__scroll-text">Листайте вниз</div></a>
@@ -36,6 +58,14 @@ get_header();
       </div>
     </div>
   </div>
+  <style>
+    .banner {
+      overflow: hidden;
+      background: url(<?php the_field('main_bg'); ?>) no-repeat 50% 50%;
+      background-size: cover;
+      min-height: 54.5rem;
+    }
+  </style>
 </section>
 <section class="result" id="result">
   <h2 class="result__title">Результаты наших клиентов</h2>
